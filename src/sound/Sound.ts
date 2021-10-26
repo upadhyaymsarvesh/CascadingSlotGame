@@ -1,4 +1,4 @@
-import {Howl} from 'howler';
+import { Howl } from 'howler';
 import { Constants } from './../constants/Constant'
 
 export interface SoundMap {
@@ -7,7 +7,7 @@ export interface SoundMap {
 
 export class Sound {
     private sounds: SoundMap = {};
-    
+
     constructor() {
         let reelStopSoundIds: Array<string> = [];
         for (let i = 1; i <= 5; i++) {

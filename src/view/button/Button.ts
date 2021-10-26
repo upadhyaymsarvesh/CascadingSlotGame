@@ -1,8 +1,5 @@
 import * as PIXI from 'pixi.js'
-import {TextureMap} from "./../TextureMap";
-import {App} from "../../App";
-import {Symbol} from "../Symbol";
-import { Constants } from '../../constants/Constant';
+import { TextureMap } from "./../TextureMap";
 
 export enum ButtonState {
     NORMAL = 'normal',
@@ -11,7 +8,7 @@ export enum ButtonState {
     DISABLED = 'disabled'
 }
 
-export class Button extends Symbol {
+export class Button {
     private static baseTexturePath: string = 'assets/images/button/btn_spin_';
     private static textures: TextureMap = {};
     private static isTextureMapInited: boolean = false;
@@ -19,9 +16,10 @@ export class Button extends Symbol {
     protected sprite: PIXI.Sprite;
     readonly container: PIXI.Container;
     private state: ButtonState = ButtonState.NORMAL;
+    private applic: PIXI.Application;
 
     constructor(app: PIXI.Application) {
-        super(app);
+        this.applic = app;
         this.container = new PIXI.Container();
         this.sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[Button.getDefaultTextureName()].texture);
         if (!Button.isTextureMapInited) {
@@ -49,7 +47,7 @@ export class Button extends Symbol {
         this.container.scale.x = 0.75;
         this.container.scale.y = 0.75;
         this.container.x = (1280 - this.container.width);
-        this.container.y = (720 - this.container.height)/2;
+        this.container.y = (720 - this.container.height) / 2;
         let style = new PIXI.TextStyle({
             fontFamily: "Comic Sans",
             fontSize: 36,
@@ -63,7 +61,7 @@ export class Button extends Symbol {
         text.x = this.container.width / 2;
         this.container.addChild(text);
         this.initHandlers();
-        this.app.stage.addChild(this.container);
+        this.applic.stage.addChild(this.container);
     }
 
     private initHandlers(): void {
