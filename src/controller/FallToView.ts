@@ -1,10 +1,10 @@
-import {GameState} from "./../module/GameState";
-import {FallingSymbol} from "./FallingSymbol";
-import {MovingObj} from "../view/MovingObj";
-import {Game} from "./../module/Game";
-import {SymbolContainer} from "../view/SymbolContainer";
-import {ButtonState} from "../view/button/Button";
-import {Button} from "../view/button/Button";
+import { GameState } from "./../module/GameState";
+import { FallingSymbol } from "./FallingSymbol";
+import { MovingObj } from "../view/MovingObj";
+import { Game } from "./../module/Game";
+import { SymbolContainer } from "../view/SymbolContainer";
+import { ButtonState } from "../view/button/Button";
+import { Button } from "../view/button/Button";
 import * as PIXI from 'pixi.js';
 import { Constants } from "../constants/Constant";
 

@@ -1,7 +1,6 @@
-import {MovingObj} from "../view/MovingObj";
-import {GameState} from "./../module/GameState";
-import {FallToView} from "./FallToView";
-import { Constants } from "../constants/Constant";
+import { MovingObj } from "../view/MovingObj";
+import { GameState } from "./../module/GameState";
+import { FallToView } from "./FallToView";
 import { FallingSymbol } from "./FallingSymbol";
 
 export class FallDown extends FallingSymbol {

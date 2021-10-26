@@ -1,7 +1,7 @@
-import {GameState} from "./../module/GameState";
-import {App} from "../App";
-import {SymbolContainer} from "../view/SymbolContainer";
-import {MovingObj} from "../view/MovingObj";
+import { GameState } from "./../module/GameState";
+import { App } from "../App";
+import { SymbolContainer } from "../view/SymbolContainer";
+import { MovingObj } from "../view/MovingObj";
 import { Constants } from "../constants/Constant";
 
 export abstract class FallingSymbol extends GameState {
@@ -53,21 +53,16 @@ export abstract class FallingSymbol extends GameState {
     protected init(): void {
         for (let i = 0; i < Constants.TOTAL_ROWS; i++) {
             let allowedRow: Array<boolean> = [];
-            for (let j = 0; j < Constants.SYMBOLS_PER_ROW; j++) {
-                allowedRow.push(false);
-            }
-            this.allowedToMove.push(allowedRow);
-        }
-        for (let i = 0; i < Constants.TOTAL_ROWS; i++) {
             let finishedRow: Array<boolean> = [];
             for (let j = 0; j < Constants.SYMBOLS_PER_ROW; j++) {
+                allowedRow.push(false);
                 finishedRow.push(false);
             }
+            this.allowedToMove.push(allowedRow);
             this.finishedMoving.push(finishedRow);
-        }
-        for (let i = 0; i < Constants.TOTAL_ROWS; i++) {
             this.allowedRows.push(false);
         }
+        
         let currentRow = 0;
         let rowsInterval = setInterval((() => {
             this.allowedRows[currentRow] = true;

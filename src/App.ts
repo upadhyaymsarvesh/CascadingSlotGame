@@ -1,23 +1,22 @@
 import * as PIXI from 'pixi.js'
-import {Game} from "./module/Game";
-import {GameState} from './module/GameState'
-import {ButtonState} from "./view/button/Button";
-import {Button} from "./view/button/Button";
-import {Sound} from "./sound/Sound";
-import {Constants} from "./constants/Constant";
+import { Game } from "./module/Game";
+import { GameState } from './module/GameState'
+import { ButtonState } from "./view/button/Button";
+import { Button } from "./view/button/Button";
+import { Sound } from "./sound/Sound";
 import { SymbolContainer } from './view/SymbolContainer';
 import { FallDown } from './controller/FallDown';
 
 export class App {
     readonly appli: PIXI.Application;
-    
+
     private gameState: GameState;
     private spinButton: Button | undefined;
     private symbolContainer: SymbolContainer | undefined;
     private sound: Sound = new Sound();
 
-    constructor(){
-        this.appli =new PIXI.Application({
+    constructor() {
+        this.appli = new PIXI.Application({
             width: 1280,
             height: 720
         });
