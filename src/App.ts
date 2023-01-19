@@ -43,7 +43,7 @@ export class App {
 
     private setup(): void {
         this.buildScene();
-        this.appli.ticker.add(delta => this.gameLoop(delta))
+        this.appli.ticker.add((delta) => this.gameLoop(delta))
     }
 
     private buildScene(): void {
