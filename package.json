@@ -1,6 +1,7 @@
 {
     "name": "cascadingslotgame",
     "version": "0.0.1",
+    "developerName": "Sarvesh",
     "dependencies": {
         "@types/howler": "^2.1.0",
         "howler": "^2.1.2",
